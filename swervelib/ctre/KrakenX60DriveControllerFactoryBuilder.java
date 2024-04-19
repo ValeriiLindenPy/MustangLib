@@ -54,12 +54,12 @@ public final class KrakenX60DriveControllerFactoryBuilder {
             // }
            // These lines of code are configuring the current limits for the TalonFX motor controller.
            // Here's a breakdown of what each line is doing:
-            motorConfiguration.CurrentLimits.SupplyCurrentLimit = 60;
+            motorConfiguration.CurrentLimits.SupplyCurrentLimit = 40;
             motorConfiguration.CurrentLimits.SupplyCurrentLimitEnable = true;
             motorConfiguration.CurrentLimits.StatorCurrentLimit= 100;
             motorConfiguration.CurrentLimits.StatorCurrentLimitEnable=true;
             motorConfiguration.CurrentLimits.SupplyTimeThreshold=0.25;
-            motorConfiguration.CurrentLimits.SupplyCurrentThreshold=120;
+            motorConfiguration.CurrentLimits.SupplyCurrentThreshold=80;
             
 
             TalonFX motor = new TalonFX(id, canbus);
