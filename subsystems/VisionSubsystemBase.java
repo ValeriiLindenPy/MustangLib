@@ -255,14 +255,6 @@ public abstract class VisionSubsystemBase extends MustangSubsystemBase {
             latestResults.put(photonCamera.getName(), result);
             if (ignoreFrame(result))
                 return Optional.empty();
-            for(int i = 1; i < result.getTargets().size(); i++){
-                if(led.getAllianceColor() == LED.LEDColor.RED && photonCamera.getName().equals("Arducam_B") && result.getTargets().get(i - 1).getFiducialId() == 3 ||  result.getTargets().get(i - 1).getFiducialId() == 4){
-                    led.setLedMode(LED.Mode.VISIONON);
-                    break;
-                } else if(led.getAllianceColor() == LED.LEDColor.BLUE && photonCamera.getName().equals("Arducam_B") && result.getTargets().get(i - 1).getFiducialId() == 7 ||  result.getTargets().get(i - 1).getFiducialId() == 8){
-                    led.setLedMode(LED.Mode.VISIONON);
-                    break;
-                }
             }
             
             Optional<EstimatedRobotPose> optEstimation = estimator.update(result);
