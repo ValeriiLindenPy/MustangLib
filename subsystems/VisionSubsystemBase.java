@@ -321,25 +321,25 @@ public abstract class VisionSubsystemBase extends MustangSubsystemBase {
     /**
      * A record that stores and computes deviation of a target( a tag)
      */
-    public static record UnitDeviationParams(double distanceMultiplier, double eulerMultiplier, double minimum) {
-        private double computeUnitDeviation(double averageDistance) {
+    public record UnitDeviationParams(double distanceMultiplier, double eulerMultiplier, double minimum) {
+        public double computeUnitDeviation(double averageDistance) {
             return Math.max(minimum, eulerMultiplier * Math.exp(averageDistance * distanceMultiplier));
         }
     }
     /**
      * A record that stores a tag's data with their deviation
      */
-    public static record TagCountDeviation(UnitDeviationParams xParams, UnitDeviationParams yParams, UnitDeviationParams thetaParams) {
-        private Vector<N3> computeDeviation(double averageDistance) {
+    public record TagCountDeviation(UnitDeviationParams xParams, UnitDeviationParams yParams, UnitDeviationParams thetaParams) {
+        public Vector<N3> computeDeviation(double averageDistance) {
             return VecBuilder.fill(
                     xParams.computeUnitDeviation(averageDistance),
                     yParams.computeUnitDeviation(averageDistance),
                     thetaParams.computeUnitDeviation(averageDistance));
         }
-
         public TagCountDeviation(UnitDeviationParams xyParams, UnitDeviationParams thetaParams) {
             this(xyParams, xyParams, thetaParams);
         }
     }
+    
 
 }
