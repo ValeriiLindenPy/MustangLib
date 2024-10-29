@@ -18,7 +18,7 @@ import frc.team670.mustanglib.subsystems.MustangSubsystemBase.HealthState;
 import frc.team670.mustanglib.subsystems.drivebase.TankDrive;
 
 /**
- *  Wheel curvature drive
+ * Uses steering wheel controller
  * Note: this is for tank drive
  */
 public class WheelCurvatureDrive extends Command implements MustangCommand {

@@ -13,6 +13,7 @@ import frc.team670.mustanglib.utils.MustangController;
 
 /**
  *  @author Rathik, Ethan Chang, Aaditya R, Akshat Adzule, Benjamin, armaan g, aditi k
+ * Single Joystick for Xbox 
  * Note: this is for tank drive
  */
 public class XboxRobotOrientedDrive extends Command implements MustangCommand {

@@ -12,6 +12,7 @@ import frc.team670.mustanglib.subsystems.drivebase.DriveBase;
 
 /**
  * The ToggleIdleMode class is a Java class that toggles the idle mode (the mode that the motors are set, to brake or coast) of a DriveBase object.
+ * use case: H-drive. Allows you to use the H drive in coast and switch back to break to not be pushed around
  */
 public class ToggleIdleMode extends InstantCommand implements MustangCommand{
 

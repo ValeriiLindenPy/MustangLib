@@ -21,16 +21,12 @@ public class ResetNavX extends InstantCommand implements MustangCommand{
         this.navx = navx;
     }
 
-
     public void initialize() {
-        navx.reset();
-        
+        navx.reset(); 
     }
-
 
     @Override
     public Map<MustangSubsystemBase, HealthState> getHealthRequirements() {
-        
         return null;
     }
 }
