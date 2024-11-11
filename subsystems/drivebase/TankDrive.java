@@ -477,14 +477,14 @@ public abstract class TankDrive extends DriveBase {
   }
 
   public void sendEncoderDataToDashboard() {
-    SmartDashboard.putNumber("Left M Position Ticks", left1Encoder.getPosition());
-    SmartDashboard.putNumber("Left M Velocity Ticks", left1Encoder.getVelocity());
-    SmartDashboard.putNumber("Left S Position Ticks", left2Encoder.getPosition());
-    SmartDashboard.putNumber("Left S Velocity Ticks", left2Encoder.getVelocity());
-    SmartDashboard.putNumber("Right M Position Ticks", right1Encoder.getPosition());
-    SmartDashboard.putNumber("Right M Velocity Ticks", right1Encoder.getVelocity());
-    SmartDashboard.putNumber("Right S Position Ticks", right2Encoder.getPosition());
-    SmartDashboard.putNumber("Right S Velocity Ticks", right2Encoder.getVelocity());
+    Logger.recordOutput("Left M Position Ticks", left1Encoder.getPosition());
+    Logger.recordOutput("Left M Velocity Ticks", left1Encoder.getVelocity());
+    Logger.recordOutput("Left S Position Ticks", left2Encoder.getPosition());
+    Logger.recordOutput("Left S Velocity Ticks", left2Encoder.getVelocity());
+    Logger.recordOutput("Right M Position Ticks", right1Encoder.getPosition());
+    Logger.recordOutput("Right M Velocity Ticks", right1Encoder.getVelocity());
+    Logger.recordOutput("Right S Position Ticks", right2Encoder.getPosition());
+    Logger.recordOutput("Right S Velocity Ticks", right2Encoder.getVelocity());
   }
 
    
@@ -698,18 +698,18 @@ public abstract class TankDrive extends DriveBase {
 
    
   public void debugSubsystem() {
-    SmartDashboard.putNumber("Heading", getHeading());
-    SmartDashboard.putNumber("currentX", getPose().getX());
-    SmartDashboard.putNumber("currentY", getPose().getY());
-    SmartDashboard.putNumber("left 1 encoder", getLeftPositionTicks());
-    SmartDashboard.putNumber("right 1 encoder", getRightPositionTicks());
-    SmartDashboard.putNumber("left velocity", left1Encoder.getVelocity());
-    SmartDashboard.putNumber("right velocity", right1Encoder.getVelocity());
-    SmartDashboard.putNumber("left position", left1Encoder.getPosition());
-    SmartDashboard.putNumber("right position", right1Encoder.getPosition());
-    SmartDashboard.putNumber("Heading", getHeading());
-    SmartDashboard.putNumber("pose X", getPose().getX());
-    SmartDashboard.putNumber("pose Y", getPose().getY());
+    Logger.recordOutput("Heading", getHeading());
+    Logger.recordOutput("currentX", getPose().getX());
+    Logger.recordOutput("currentY", getPose().getY());
+    Logger.recordOutput("left 1 encoder", getLeftPositionTicks());
+    Logger.recordOutput("right 1 encoder", getRightPositionTicks());
+    Logger.recordOutput("left velocity", left1Encoder.getVelocity());
+    Logger.recordOutput("right velocity", right1Encoder.getVelocity());
+    Logger.recordOutput("left position", left1Encoder.getPosition());
+    Logger.recordOutput("right position", right1Encoder.getPosition());
+    Logger.recordOutput("Heading", getHeading());
+    Logger.recordOutput("pose X", getPose().getX());
+    Logger.recordOutput("pose Y", getPose().getY());
     sendEncoderDataToDashboard();
   }
 }
